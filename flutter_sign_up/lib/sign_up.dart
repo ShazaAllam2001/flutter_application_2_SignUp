@@ -88,33 +88,30 @@ class  SignUpState extends State<SignUp> {
                 ),
               ),
         
-              StatefulBuilder(
-                builder: (BuildContext context, StateSetter setState) {
-                  return Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: TextFormField(
-                      controller: passController,
-                      obscureText: hiddenPassword1,
-                      validator: (value) {
-                        if (value == null) {
-                          return "Password is required";
-                        }
-                        else if (value.length < 6) {
-                          return "Password should be at least 6 characters";
-                        }
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                        labelText: "Password",
-                        suffixIcon: IconButton(
-                          onPressed: togglePassword1, 
-                          icon: Icon(hiddenPassword1? Icons.visibility_off : Icons.visibility),
-                        )
-                      )
-                    ),
-                  );
-                }
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: TextFormField(
+                  controller: passController,
+                  obscureText: hiddenPassword1,
+                  validator: (value) {
+                    if (value == null) {
+                      return "Password is required";
+                    }
+                    else if (value.length < 6) {
+                      return "Password should be at least 6 characters";
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    labelText: "Password",
+                    suffixIcon: IconButton(
+                      onPressed: togglePassword1, 
+                      icon: Icon(hiddenPassword1? Icons.visibility_off : Icons.visibility),
+                    )
+                  )
+                ),    
               ),
+              
         
               Padding(
                 padding: const EdgeInsets.all(5.0),
